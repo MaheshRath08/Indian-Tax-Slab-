@@ -1,6 +1,3 @@
-from asyncio import IncompleteReadError
-
-
 print("This Tax slab functions according to the new tax rates") #Welcome message
 
 #Define the function 
@@ -26,13 +23,13 @@ def taxSlab(income):
         tax = (income - 1500000) * 0.30 + 187500
         return tax
  
-    
-try:                
-    income = float(input("Your Income:\n"))
-    #Call the function here 
-    print("Your Income-Tax is", taxSlab(income))
-except ValueError:
-    print("Make sure type in valid numerical value")      #error hading to intake proper input
-    income = float(input("Your Income:\n"))
+while(True):    
+    try:                
+        income = float(input("Your Income:\n"))
+        #Call the function here 
+        print("Your Income-Tax is", taxSlab(income))
+    except ValueError:
+        print("Make sure type in valid numerical value")      #error hading to intake proper input
+        continue
    
 
